@@ -219,13 +219,13 @@ function LoadGame(url, redirect) {
     document.getElementById("GamesContainer").style.display = "none";
     document.getElementById("MenuBarContainer").style.display = "none";
     document.getElementById("game-display-container").style.display = "flex";
-    document.getElementById("game-display-iframe").src = url;
+    document.getElementById("game-display-iframe").src = CDN_BASE + url;
     //document.getElementById("audioSource").volume = 0;
   } else if (redirect || openGamesInNewTab) {
     if (!tabCloakGames) {
-      window.open(window.location.href + url, "_blank");
+      window.open(CDN_BASE + url, "_blank");
     } else if (tabCloakGames) {
-      OpenInBlank(window.location.href + url);
+      OpenInBlank(CDN_BASE + url);
     }
   }
 }
@@ -255,13 +255,13 @@ function LoadChange(url) {
     document.getElementById("game-display-container").style.display = "none";
     document.getElementById("game-display-iframe").src = "";
     document.getElementById("change-display-container").style.display = "flex";
-    document.getElementById("change-display-iframe").src = url;
+    document.getElementById("change-display-iframe").src = CDN_BASE + url;
     //document.getElementById("audioSource").volume = 0;
   } else if (openGamesInNewTab) {
     if (!tabCloakGames) {
-      window.open(window.location.href + url, "_blank");
+      window.open(CDN_BASE + url, "_blank");
     } else if (tabCloakGames) {
-      OpenInBlank(window.location.href + url);
+      OpenInBlank(CDN_BASE + url);
     }
   }
 }
